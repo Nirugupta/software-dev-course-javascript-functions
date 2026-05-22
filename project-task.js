@@ -107,4 +107,5 @@ function printArray(names) {
     console.log(names[i]);
   }
 }
+
 printArray(namesArray);

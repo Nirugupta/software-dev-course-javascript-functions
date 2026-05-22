@@ -21,8 +21,6 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Use return statements
 // - Follow the single responsibility principle
 // ============================================
-
-
 // ============================================
 // 🧩 Task 1: Generate Attendee Badge
 // ============================================
@@ -36,7 +34,24 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+// Psuedo code for task 1:
+/* 
+START
+DEFINE FUNCTION GENERATEATTENDEEBADGE WITH NAME AND ROLE 
+    RETURN NAME AND CAPTILIZED ROLE
+    END FUNCTION
+ CALL THE FUNCTION WITH ARGUMENTS NAME AND ROLE
+END
+*/
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
 
+function generateAttendeeBadge(name, role) {
+  return `Name:${capitalize(name)}, Role:${capitalize(role)}`;
+}
+console.log(generateAttendeeBadge("alice", "speaker"));
+console.log(generateAttendeeBadge("bob", "attendee"));
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
 // ============================================
@@ -51,8 +66,33 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
 
+// Psuedo code for task 2:
+/* 
+START
+  DEFINE FUNCTION CALCULATECOST WITH ATTENDEES AND COSTPERPERSON 
+    CALCULATE TOTAL COST
+    IF 
+      CALCULATE AND APPLY DISCOUNT FOR ATTENDEES MORE THAN 100
+      PRINT A MESSAGE
+    END IF  
+    RETURN TOTAL
+    END FUNCTION
+ CALL THE FUNCTION WITH ARUGUMENTS ATTENDEES AND COSTPERPERSON
+END
+*/
 
-// ============================================
+function calculateCost(attendees, costperperson) {
+  let total = attendees * costperperson;
+  if (attendees > 100) {
+    total = total - total * 0.1;
+    console.log("hurray!!We are applying discount to you.");
+  }
+  return total;
+}
+console.log(calculateCost(50, 20));
+console.log(calculateCost(120, 25));
+
+// ===========================================
 // 🧩 Task 3: Validate Email
 // ============================================
 // Create a function that:
@@ -64,6 +104,28 @@ reusable functions that solve specific tasks. This activity encourages:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
 
+// Psuedo code for task 2:
+/* 
+START
+  DEFINE FUNCTION VALIDATEMAIL WITH EMAIL 
+    IF 
+      EMAIL CONTAINS @ AND .
+      RETURN TRUE
+    ELSE
+      RETURN FALSE
+    END IF  
+   END FUNCTION
+ CALL THE FUNCTION WITH ARUGUMENT EMAIL
+END
+*/
+
+function validateEmail(email) {
+  return email.includes("@") && email.includes(".");
+}
+console.log(validateEmail("bob@gmail.com"));
+console.log(validateEmail("bobgmail.com"));
+console.log(validateEmail("bob@gmailcom"));
+console.log(validateEmail("bobgmailcom"));
 
 // ============================================
 // 🧠 Collaborative Steps
